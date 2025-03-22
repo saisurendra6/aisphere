@@ -1,12 +1,12 @@
 import 'dart:convert';
 import 'dart:developer';
 
-import 'package:aisphere/data/gemini_data.dart';
+import 'package:aisphere/data/api_data.dart';
 import 'package:http/http.dart' as http;
 
 class GeminiModel {
   static Future<String> generateContent(String prompt) async {
-    final response = await http.post(Uri.parse(geminiUrl),
+    final response = await http.post(Uri.parse(geminiURL),
         headers: {'Content-Type': 'application/json'},
         body: jsonEncode({
           "contents": [
